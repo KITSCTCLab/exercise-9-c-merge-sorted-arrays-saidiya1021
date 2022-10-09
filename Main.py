@@ -1,7 +1,42 @@
 from typing import List
 
 def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-  # Write code here
+  x = nums1[0:m]
+  y = nums2[0:n]
+  nums1=x+y
+  nums1 = merge_sort(nums1)
+  return nums1
+  
+def merge_sort(mylist):
+  if len(myList) > 1:
+        mid = len(myList) // 2
+        left = myList[:mid]
+        right = myList[mid:]
+        
+        merge_sort(left)
+        merge_sort(right)
+        i = 0
+        j = 0
+        k = 0
+        
+        while i < len(left) and j < len(right):
+            if left[i]<=right[j]:
+              myList[k] = left[i]
+              i += 1
+            else:
+                myList[k] = right[j]
+                j += 1
+              k += 1
+        while i < len(left):
+            myList[k] = left[i]
+            i += 1
+            k += 1
+
+        while j < len(right):
+            myList[k]=right[j]
+            j += 1
+            k += 1
+  return myList
 
 
 # Do not change the following code
