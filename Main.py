@@ -7,12 +7,12 @@ def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
   nums1 = merge_sort(nums1)
   return nums1
   
-def merge_sort(mylist) -> None:
-  if len(mylist) > 1:
-        mid = len(mylist) // 2
-        left = mylist[:mid]
-        right = mylist[mid:]
-        
+def merge_sort(myList) -> None:
+  if len(myList) > 1:
+        mid = len(myList) // 2
+        left = myList[:mid]
+        right = myList[mid:]
+
         merge_sort(left)
         merge_sort(right)
         i = 0
@@ -20,23 +20,24 @@ def merge_sort(mylist) -> None:
         k = 0
         
         while i < len(left) and j < len(right):
-            if left[i]<=right[j]:
-              mylist[k] = left[i]
+            if left[i] <= right[j]:
+              myList[k] = left[i]
               i += 1
             else:
-                mylist[k] = right[j]
+                myList[k] = right[j]
                 j += 1
             k += 1
+
         while i < len(left):
-            mylist[k] = left[i]
+            myList[k] = left[i]
             i += 1
             k += 1
 
         while j < len(right):
-            mylist[k]=right[j]
+            myList[k]=right[j]
             j += 1
             k += 1
-  return mylist
+  return myList
 
 
 # Do not change the following code
